@@ -1,0 +1,29 @@
+﻿@using DeviceShop.Core
+@model ICollection<Device>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    #black
+    {
+        color: Black;
+    }
+</style>
+
+@if(Model != null)
+{
+    @foreach(var item in Model)
+    {
+       <div class="col-3">
+           <div class="card" style="width: 18rem;">
+                 <div class="card-body">
+                       <p id="black"> @item.Title  </p>
+                       <a asp-action="Remove" asp-route-id="@item.DeviceId" class="btn btn-warning">Remove from cart</a>
+                       <a asp-action="Continue" asp-route-id="@item.DeviceId" class="btn btn-danger">Continue</a>
+                 </div>
+           </div>
+       </div>
+    }
+}
+

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Device>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    #black
+    {
+        color: Black;
+    }
+</style>
+
+<form  style="float:right" method="get" asp-action="Index">
+		<p>
+			<input type="search" placeholder="enter query" value="@ViewData["GetDevicesDetails"]" name="deviceSearch" style="width:500px;" />
+			<input type="submit" value="Search" class="btn btn-primary" />
+			<a asp-action="Index"  type="button" class="btn btn-sm btn-light">Reset</a>
+		</p>
+	</form>
+<h1>List of Devices</h1>
+<a asp-action="Create"  type="button" class="btn btn-sm btn-light">Create</a>
+  <div class="album py-5 bg-black">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          @foreach(var item in Model)
+            {
+                <div class="col">
+          <div class="card shadow-sm">
+           <p>@item.DeviceId</p>
+            <img class="card-img-top" src="\device\getimage\@item.DeviceId" width="100%" height="225" alt="Card image cap">
+            <div class="card-body">
+              <p id="black" class="card-text">@item.Title</p>
+              <p id="black"class="card-text">@item.Price</p>
+              <p>@item.Image</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a asp-action="Detail" asp-route-id="@item.DeviceId" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                  <a asp-action="Delete" asp-route-id="@item.DeviceId" type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                  <a asp-action="Edit" asp-route-id="@item.DeviceId" class="btn btn-sm btn-outline-secondary">Edit</a>
+                  <a asp-action="AddToCart" asp-route-id="@item.DeviceId" type="button" class="btn btn-sm btn-outline-secondary"  >Add to cart</a>
+                  
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+            }
+         
+      </div>
+    </div>
+  </div>
+

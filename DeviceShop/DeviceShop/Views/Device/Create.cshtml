@@ -1,0 +1,43 @@
+﻿@model Device
+@{
+}
+
+<h3>Create new device</h3>
+<hr />
+<form asp-action="Create" enctype="multipart/form-data" class="form-group">
+	<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Title" class="control-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Rating" class="control-label"></label>
+        <input asp-for="Rating" class="form-control" />
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+      <div class="form-group">
+        <label asp-for="Image" class="control-label"></label>
+        <input class="form-control" name="picture" id="picture" type="file" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="CategoryId" class="control-label"></label>
+        <input asp-for="CategoryId" class="form-control" />
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+        <a class="btn btn-outline-secondary" asp-action="Index">To list</a>
+    </div>
+</form>
