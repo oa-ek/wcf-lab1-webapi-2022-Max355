@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeviceShop.Repos.DTO
 {
-    internal class ColoursDto
+    public class ColoursDto
     {
         public int Id { get; set; }
         public string ColourTitle { get; set; }

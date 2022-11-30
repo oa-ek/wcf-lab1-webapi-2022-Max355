@@ -13,6 +13,15 @@ namespace DeviceApi
         {
            CreateMap<DevicesDto, Device>();
            CreateMap<Device, DevicesDto>();
+
+           CreateMap<CategoriesDto, Category>();
+           CreateMap<Category, CategoriesDto>();
+
+           CreateMap<CategoryModelsDto, CategoryModel>();
+           CreateMap<CategoryModel, CategoryModelsDto>();
+
+           CreateMap<ColoursDto, Colour>();
+           CreateMap<Colour, ColoursDto>();
         }
 
     }

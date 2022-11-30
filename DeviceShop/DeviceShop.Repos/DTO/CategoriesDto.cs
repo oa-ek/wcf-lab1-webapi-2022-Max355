@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeviceShop.Repos.DTO
 {
-    internal class CategoriesDto
+    public class CategoriesDto
     {
         public int Id { get; set; }
         public string Name { get; set; }
