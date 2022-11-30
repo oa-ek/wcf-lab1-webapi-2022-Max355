@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Client\DeviceWebApp.Client.csproj" />
-    <ProjectReference Include="..\Shared\DeviceWebApp.Shared.csproj" />
   </ItemGroup>
 
 
