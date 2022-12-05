@@ -34,11 +34,7 @@ namespace DeviceShop.Controllers
             return View();
         }
 
-        // GET: DeviceController/Create
         
-
-       
-
 
         [Authorize(Roles = "Admin")]
         // GET: DeviceController/Delete/5
